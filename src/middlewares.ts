@@ -7,6 +7,7 @@ import CustomError from './classes/CustomError';
 // import chalk from 'chalk';
 
 // convert GPS coordinates to decimal format
+
 // for longitude, send exifData.gps.GPSLongitude, exifData.gps.GPSLongitudeRef
 // for latitude, send exifData.gps.GPSLatitude, exifData.gps.GPSLatitudeRef
 const gpsToDecimal = (gpsData: number[], hem: string) => {
@@ -76,7 +77,7 @@ const makeThumbnail = async (
   next: NextFunction
 ) => {
   try {
-    console.log(req.file?.path);
+    console.log('reqfilepath', req.file?.path);
     await sharp(req.file?.path)
       .resize(160, 160)
       .png()
